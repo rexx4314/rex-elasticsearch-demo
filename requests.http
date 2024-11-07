@@ -1,0 +1,32 @@
+### 새로운 Person 생성
+POST http://localhost:8080/api/persons
+Content-Type: application/json
+
+{
+  "name": "Rex-2 Jo",
+  "age": 31
+}
+
+### 모든 Person 조회
+GET http://localhost:8080/api/persons
+
+### ID로 특정 Person 조회
+#  "content": [
+#{
+#"id": "tzdsBZMBC2uvEAZ1TR0q",
+#"name": "Rex Jo",
+#"age": 30
+#}
+#],
+GET http://localhost:8080/api/persons/tzdsBZMBC2uvEAZ1TR0q
+
+### 나이가 30인 사람들을 조회 (Query 방식)
+GET http://localhost:8080/api/persons/query?age=31
+Content-Type: application/json
+
+### 나이가 30인 사람들을 조회 (ElasticsearchClient 방식)
+GET http://localhost:8080/api/persons/elasticsearch-client?age=31
+Content-Type: application/json
+
+### Person 삭제
+DELETE http://localhost:8080/api/persons/1

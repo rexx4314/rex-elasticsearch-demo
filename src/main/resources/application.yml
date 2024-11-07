@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: elasticsearchDemo
+  elasticsearch:
+    uris: http://localhost:9200
+    username: elastic
+    password: changeme
+
+# Elasticsearch password setup
+## built-in elastic user:
+#  ./bin/elasticsearch-setup-passwords interactive
+
+## docker-compose.yml
+#    environment:
+#      - discovery.type=single-node
+#      - ELASTIC_PASSWORD=changeme
+#      - xpack.security.enabled=true
+
+logging:
+  level:
+    org.elasticsearch: DEBUG
